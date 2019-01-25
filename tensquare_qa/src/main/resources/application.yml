@@ -16,3 +16,10 @@ jwt:
   config:
     key: itcast
     ttl: 3600000  #一个小时
+
+eureka:
+  client:
+    service-url: #Eureka客户端与Eureka服务端进行交互的地址
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer‐ip‐address: true #跨域

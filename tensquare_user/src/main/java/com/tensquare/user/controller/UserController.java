@@ -31,6 +31,14 @@ public class UserController {
 	@Autowired
     private JwtUtil jwtUtil;
 
+    /**
+     * 更新好友粉丝数和用户关注数
+     */
+    @RequestMapping(value = "/{userid}/{friendid}/{x}", method = RequestMethod.PUT)
+    public void updateFanscountAndFollowcount(@PathVariable String userid, @PathVariable String friendid, @PathVariable int x) {
+        userService.updateFanscountAndFollowcount(x, userid, friendid);
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Result login(@RequestBody User user) {
 	    user = userService.login(user.getMobile(), user.getPassword());

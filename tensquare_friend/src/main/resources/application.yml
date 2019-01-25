@@ -1,27 +1,23 @@
-server: 
-  port: 9008
-spring: 
-  application:  
-    name: tensquare-user #指定服务名
-  datasource:  
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.96.132:3306/tensquare_user?characterEncoding=UTF8
+server:
+  port: 9100
+
+spring:
+  application:
+    name: tensquare-Friend
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.96.132:3306/tensquare_friend?characterEncoding=UTF8
     username: root
     password: root
-  jpa: 
+  jpa:
     database: MySQL
     show-sql: true
   redis:
     host: 192.168.96.132
-
-  rabbitmq:
-    host: 192.168.96.132
-
 jwt:
   config:
     key: itcast
-    ttl: 3600000  #一个小时
-
 eureka:
   client:
     service-url: #Eureka客户端与Eureka服务端进行交互的地址

@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: tensquare_base
+    name: tensquare-base
 
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -14,3 +14,10 @@ spring:
 jpa:
   datasource: mysql
   show-sql: true
+
+eureka:
+  client:
+    service-url: #Eureka客户端与Eureka服务端进行交互的地址
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer‐ip‐address: true #跨域
